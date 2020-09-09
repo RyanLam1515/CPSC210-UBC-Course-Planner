@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="585.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainMenuController">
+   <children>
+      <BorderPane prefHeight="590.0" prefWidth="787.0" style="-fx-background-color: #383838;">
+         <top>
+            <VBox prefHeight="63.0" prefWidth="602.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar fx:id="mainMenuBar">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#menuBarCloseProgram" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#menuBarAbout" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Label text="Registered Courses:" textFill="#e8e8e8">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+         </top>
+         <right>
+            <VBox prefHeight="391.0" prefWidth="315.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="addCourseButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="256.0" style="-fx-background-color: #7cafc2;" text="Add a Course">
+                     <graphic>
+                        <ComboBox fx:id="addCourseComboBox" editable="true" onAction="#handleAddCourseButtonClick" prefWidth="150.0" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="dropCourseButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: #7cafc2;" text="Drop a Course">
+                     <graphic>
+                        <ComboBox fx:id="dropCourseComboBox" onAction="#handleDropCourseButtonClick" prefWidth="150.0" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="completeCourseButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="276.0" style="-fx-background-color: #7cafc2;" text="Complete a Course">
+                     <graphic>
+                        <ComboBox fx:id="completeCourseComboBox" onAction="#handleCompleteCourseButtonClick" prefWidth="150.0" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="checkCreditsButton" mnemonicParsing="false" onAction="#handleCheckCreditsButtonClick" style="-fx-background-color: #7cafc2;" text="Check Credits" />
+                  <Button fx:id="saveCoursesButton" mnemonicParsing="false" onAction="#handleSaveCoursesButtonClick" style="-fx-background-color: #7cafc2;" text="Save Courses" />
+                  <Button fx:id="loadCoursesButton" layoutX="18.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleLoadCoursesButtonClick" style="-fx-background-color: #7cafc2;" text="Load Courses" />
+                  <Button fx:id="costInformationButton" layoutX="18.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleCostInformationButtonClick" style="-fx-background-color: #7cafc2;" text="Get Cost Information" />
+                  <Button fx:id="preReqCheckButton" layoutX="18.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: #7cafc2;" text="PreRequisite Check">
+                     <graphic>
+                        <ComboBox prefWidth="150.0" fx:id="preReqCheckComboBox" onAction="#handlePreReqCheckButtonClick"/>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </VBox>
+         </right>
+         <bottom>
+            <TextArea fx:id="mainMenuTextArea" prefHeight="136.0" prefWidth="787.0" style="-fx-background-color: #B8B8B8;" text="Welcome, user. Thank you for using Ryan's Course Planner." BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font></TextArea>
+         </bottom>
+         <center>
+            <TableView prefHeight="391.0" prefWidth="402.0" BorderPane.alignment="CENTER" fx:id="registeredCoursesTableView"/>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
