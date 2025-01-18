@@ -275,5 +275,12 @@ public class CoursePlannerTest {
         assertEquals(15,coursePlanner.getCompletedCourseCredits());
     }
 
+    @Test
+    public void testSetCompleteCourseCredits() {
+        assertEquals(0,coursePlanner.getCompletedCourseCredits());
+        coursePlanner.setCompletedCourseCredits(15);
+        assertEquals(15,coursePlanner.getCompletedCourseCredits());
+    }
+
 }
 
